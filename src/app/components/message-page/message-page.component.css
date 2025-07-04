@@ -1,0 +1,28 @@
+.message-page-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 2rem;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+}
+
+.left-panel, .right-panel {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 2in;
+  height: 4in;
+  overflow: hidden;
+}
+
+
+.left-panel {
+  flex: 0 0 30%;
+}
+
+.right-panel {
+  flex: 0 0 30%;
+  overflow-y: auto;
+}

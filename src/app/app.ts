@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MessagesComponent } from './messages/messages.component';
+import { provideHttpClient } from '@angular/common/http';
+import { MessagePageComponent } from './components/message-page/message-page.component.js';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MessagesComponent],
-  template: `<app-messages></app-messages>`,
+  imports: [MessagePageComponent],
+  template: `
+    <app-message-page></app-message-page>
+  `,
   styleUrls: ['./app.css']
 })
-export class App {
-  protected title = 'frontend';
-}
+export class App {}

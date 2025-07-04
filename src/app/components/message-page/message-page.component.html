@@ -1,0 +1,8 @@
+<div class="message-page-container">
+  <div class="left-panel">
+    <app-message-form (messageSent)="onMessageSent()"></app-message-form>
+  </div>
+  <div class="right-panel">
+    <app-message-history [refresh]="refreshTrigger"></app-message-history>
+  </div>
+</div>

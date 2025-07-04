@@ -1,0 +1,34 @@
+<div class="message-form">
+    <label for="phone">Phone Number</label>
+    <input
+      id="phone"
+      type="text"
+      [(ngModel)]="phoneNumber"
+      name="phone"
+      placeholder="Enter phone number"
+      required
+    />
+  
+    <label for="message">Message</label>
+    <input
+      id="message"
+      type="text"
+      [(ngModel)]="newMessageBody"
+      name="message"
+      placeholder="Type a message..."
+      required
+      autocomplete="off"
+    />
+  
+    <div class="button-container">
+      <a href="#" (click)="clearForm(); $event.preventDefault()">Clear</a>
+      <button
+        type="submit"
+        (click)="sendMessage()"
+        [disabled]="loading || !newMessageBody.trim() || !phoneNumber.trim()"
+      >
+        Send
+      </button>
+    </div>
+  </div>
+  

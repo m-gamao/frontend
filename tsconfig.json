@@ -11,8 +11,11 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve",
-    "moduleResolution": "node"
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": "src"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
