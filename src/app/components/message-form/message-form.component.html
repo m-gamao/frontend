@@ -1,22 +1,22 @@
-<form (ngSubmit)="sendMessage()" #msgForm="ngForm" novalidate>
+<div class="message-form">
   <label for="phone">Phone Number</label>
   <input
     id="phone"
-    name="phone"
     type="text"
     [(ngModel)]="phoneNumber"
-    required
+    name="phone"
     placeholder="Enter phone number"
+    required
   />
 
   <label for="message">Message</label>
   <input
     id="message"
-    name="message"
     type="text"
     [(ngModel)]="newMessageBody"
-    required
+    name="message"
     placeholder="Type a message..."
+    required
     autocomplete="off"
   />
 
@@ -24,9 +24,10 @@
     <a href="#" (click)="clearForm(); $event.preventDefault()">Clear</a>
     <button
       type="submit"
-      [disabled]="loading || !msgForm.form.valid"
+      (click)="sendMessage()"
+      [disabled]="loading || !newMessageBody.trim() || !phoneNumber.trim()"
     >
       Send
     </button>
   </div>
-</form>
+</div>
