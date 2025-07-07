@@ -13,13 +13,13 @@ export interface Message {
   providedIn: 'root',
 })
 export class MessageService {
-  private apiUrl = 'http://localhost:3000/api/messages';  // your Rails backend URL
+  private apiUrl = 'http://localhost:3000/api/messages';  // Rails backend URL
 
   constructor(private http: HttpClient) {}
 
   getMessages(): Observable<Message[]> {
     return this.http.get<Message[]>(this.apiUrl, {
-      withCredentials: true  // ✅ sends session cookie for tracking
+      withCredentials: true  // sends session cookie for tracking
     });
   }
 

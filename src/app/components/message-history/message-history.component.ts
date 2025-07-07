@@ -21,18 +21,18 @@ export class MessageHistoryComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['refresh']) {
-      this.loadMessages(); // ✅ Call actual reload
+      this.loadMessages(); // Call actual reload
     }
   }
 
   loadMessages(): void {
     this.messageService.getMessages().subscribe({
       next: (data) => {
-        console.log('✅ Messages loaded:', data);
+        console.log('Messages loaded:', data);
         this.messages = data;
       },
       error: (err) => {
-        console.error('❌ Failed to load messages:', err);
+        console.error('Failed to load messages:', err);
       },
     });
   }
