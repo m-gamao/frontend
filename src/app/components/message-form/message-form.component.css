@@ -9,6 +9,8 @@
   max-width: 480px;
   margin: 0 auto;
   font-family: 'Segoe UI', sans-serif;
+  height: 4in;            /* Fix height */
+  overflow-y: auto;       /* Scroll if content overflows vertically */
 }
 
 .message-form label {
