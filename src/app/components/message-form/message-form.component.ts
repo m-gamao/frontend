@@ -20,11 +20,12 @@ export class MessageFormComponent {
   constructor(private messageService: MessageService) {}
 
   async sendMessage() {
+    console.log('Sending message:', this.phoneNumber, this.newMessageBody);
     if (!this.phoneNumber.trim() || !this.newMessageBody.trim()) return;
     this.loading = true;
 
     try {
-      await this.messageService.sendMessage(this.phoneNumber, this.newMessageBody);
+      await this.messageService.sendMessage(this.phoneNumber, this.newMessageBody).toPromise();
       this.messageSent.emit();
       this.clearForm();
     } catch (error) {

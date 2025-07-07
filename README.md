@@ -1,3 +1,13 @@
+This is a sms messenger application using Angular, Ruby on Rails, MongoDB and Twilio.
+
+To use this app:
+
+1. Enter the phone number +18777804236.
+2. Enter a text message.
+3. Click the send button to submit.
+4. Your message will appear in the message history on the right.
+
+
 # Frontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.

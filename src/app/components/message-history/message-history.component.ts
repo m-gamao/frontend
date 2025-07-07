@@ -1,28 +1,39 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Message } from 'app/services/message.service.js';
+import { Message, MessageService } from 'app/services/message.service.js';
 
 @Component({
   selector: 'app-message-history',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './message-history.component.html',
-  styleUrls: ['./message-history.component.css']
+  styleUrls: ['./message-history.component.css'],
 })
 export class MessageHistoryComponent implements OnInit, OnChanges {
-  @Input() messages: Message[] = [];
+  @Input() refresh: any;
+  messages: Message[] = [];
 
-  @Input() refresh: any; 
+  constructor(private messageService: MessageService) {}
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadMessages();
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['refresh']) {
-      // can call reload logic here
-      console.log('Refresh triggered!');
-      // e.g. this.loadMessages();
+      this.loadMessages(); // ✅ Call actual reload
     }
+  }
+
+  loadMessages(): void {
+    this.messageService.getMessages().subscribe({
+      next: (data) => {
+        console.log('✅ Messages loaded:', data);
+        this.messages = data;
+      },
+      error: (err) => {
+        console.error('❌ Failed to load messages:', err);
+      },
+    });
   }
 }

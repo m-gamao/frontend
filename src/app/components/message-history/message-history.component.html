@@ -1,13 +1,14 @@
-<div class="message-list" *ngIf="messages.length > 0; else noMessages">
-    <ul>
-      <li *ngFor="let msg of messages" class="message-item">
-        <div class="timestamp">{{ msg.created_at | date: 'short' }}</div>
-        <div class="body">{{ msg.body }}</div>
-      </li>
-    </ul>
+<div class="message-history">
+  <h2>Message History</h2>
+  <div *ngIf="messages.length > 0; else noMessages">
+    <div *ngFor="let msg of messages" class="message-item">
+      <span class="body">{{ msg.body }}</span>
+      <div class="timestamp">{{ msg.created_at | date:'short' }}</div>
+    </div>
   </div>
-  
-  <ng-template #noMessages>
-    <p>No messages yet.</p>
-  </ng-template>
-  
+</div>
+
+<ng-template #noMessages>
+  <p>No messages yet.</p>
+</ng-template>
+
