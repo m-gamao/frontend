@@ -1,17 +1,37 @@
 .message-history {
-  margin-top: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-history h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
 }
 
 .message-item {
-  border-bottom: 1px solid #ddd;
-  padding: 0.5rem 0;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
 }
 
-.timestamp {
-  font-size: 0.8rem;
+.message-item:hover {
+  background-color: #f9f9f9;
+}
+
+.message-item .body {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.message-item .timestamp {
+  font-size: 0.85rem;
   color: #888;
-}
-
-.body {
-  font-size: 1rem;
 }

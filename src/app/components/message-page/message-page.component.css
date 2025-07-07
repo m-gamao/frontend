@@ -1,28 +1,30 @@
 .message-page-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 2rem;
+  max-width: 900px;
   margin: 0 auto;
-  background-color: #f8f8f8;
-}
-
-.left-panel, .right-panel {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  width: 2in;
-  height: 4in;
-  overflow: hidden;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: stretch; /* stretch children to same height */
 }
 
-
-.left-panel {
-  flex: 0 0 30%;
+.message-page-container h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.left-panel,
 .right-panel {
-  flex: 0 0 30%;
-  overflow-y: auto;
+  flex: 1 1 400px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column; /* so content stacks vertically */
+}
+
+/* Make direct child inside panels fill the height */
+.left-panel > * , 
+.right-panel > * {
+  flex: 1 1 auto;
 }
