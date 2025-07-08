@@ -27,13 +27,25 @@
   background-color: #f9f9f9;
 }
 
+/* ✅ New meta row for To number and timestamp */
+.message-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.message-meta .phone {
+  font-weight: 500;
+}
+
+.message-meta .timestamp {
+  font-style: italic;
+}
+
 .message-item .body {
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
   display: block;
-}
-
-.message-item .timestamp {
-  font-size: 0.85rem;
-  color: #888;
 }
