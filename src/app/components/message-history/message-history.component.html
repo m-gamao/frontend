@@ -3,7 +3,7 @@
   <div *ngIf="messages.length > 0; else noMessages">
     <div *ngFor="let msg of messages" class="message-item">
       <div class="message-meta">
-        <span class="phone">{{ msg.phone }}</span>
+        <span class="phone">{{ formatPhoneNumber(msg.phone) }}</span>
         <span class="timestamp">{{ msg.created_at | date:'short' }}</span>
       </div>
       <div class="body">{{ msg.body }}</div>

@@ -15,6 +15,18 @@ export class MessageHistoryComponent implements OnInit, OnChanges {
 
   constructor(private messageService: MessageService) {}
 
+  formatPhoneNumber(rawPhone: string): string {
+    // Remove non-digits
+    const digits = rawPhone.replace(/\D/g, '');
+  
+    // Slice off country code (assumes US numbers with +1)
+    const cleaned = digits.length === 11 && digits.startsWith('1') ? digits.slice(1) : digits;
+  
+    if (cleaned.length !== 10) return rawPhone; // fallback
+  
+    return `${cleaned.slice(0, 3)}-${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
+  }
+
   ngOnInit(): void {
     this.loadMessages();
   }
